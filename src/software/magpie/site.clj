@@ -17,6 +17,7 @@
 (require 'software.magpie.site.styles)
 
 (def site-origin "https://magpie.software")
+(def target-dir "docs") ;; gh-pages requirement
 
 (defn iso-date [^java.util.Date jud]
   (subs (str (.toInstant jud)) 0 10))
@@ -152,9 +153,9 @@
     (vector? o) {:status 200, :headers {"content-type" "text/html"} :body (hiccup/render o)}))
 
 (defn render []
-  (io/make-parents "out/index.html")
+  (io/make-parents (str target-dir "/index.html"))
   (doseq [[path res] (paths)]
-    (spit (str "out" path ) (:body (response res)))))
+    (spit (str target-dir path) (:body (response res)))))
 
 (defn handler [opts]
   (let [dirs (map #(#'bb-server/file-router % nil)
