@@ -12,6 +12,7 @@
   [_]
   (su/spawn "bash" "-c" "rm -rf docs/*")
   (su/spawn "clojure" "-J-Dclojure.main.report=stderr" "-M" "-m" "software.magpie.site")
+  (su/spawn "cp" "CNAME" "docs")
   (su/spawn "bash" "-c" "cp -r assets/* docs")
   (su/spawn "git" "add" ".")
   (su/spawn "git" "commit" "-m" "bin/dev release")
