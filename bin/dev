@@ -7,12 +7,6 @@
 
 (def init {})
 
-(defn serve
-  "Start local dev server"
-  [_]
-  (bb-server/serve {:port 3801 :dir "out"})
-  @(promise))
-
 (defn release
   "Build / commit / push"
   [_]
@@ -28,8 +22,7 @@
   )
 
 (def commands
-  ["serve" #'serve
-   "release" #'release])
+  ["release" #'release])
 
 (def flags
   ["-v, --verbose" "Increase verbosity"

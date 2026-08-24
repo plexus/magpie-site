@@ -183,8 +183,10 @@
     (println "Starting server on port" port)
     (server/run-server (fn [req] ((handler opts) req)) {:port port})))
 
-(defn -main [& _]
-  (render))
+(defn -main [& cmd]
+  (if (= "dev" cmd)
+    (run-server {})
+    (render)))
 
 (comment
   (run-server {})
