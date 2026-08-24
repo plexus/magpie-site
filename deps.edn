@@ -1,0 +1,14 @@
+{:deps {org.clojure/clojure              {:mvn/version "1.12.5"}
+        com.lambdaisland/hiccup          {:mvn/version "0.14.67"}
+        com.lambdaisland/ornament        {:git/url "https://github.com/lambdaisland/ornament.git"
+                                          :git/sha "13b537c5b2cf02e0306af9fc8acf48f31e22400e"
+                                          :git/ref "ornament-next"}
+        com.lambdaisland/garden          {:mvn/version "1.9.606"}
+        com.lambdaisland/kramdown        {:mvn/version "0.1.6"}
+        enlive/enlive                    {:mvn/version "1.1.6"}
+        com.lambdaisland/shellutils      {:mvn/version "0.3.20"}
+        clj-commons/clj-yaml             {:mvn/version "1.0.29"}
+        org.babashka/http-server         {:mvn/version "0.1.14"}
+        org.codehaus.plexus/plexus-utils ^:pinned {:mvn/version "3.4.2"}}
+ :aliases
+ {:dev {:extra-paths ["dev"]}}}

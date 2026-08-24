@@ -1,0 +1,44 @@
+#!/usr/bin/env bb
+
+(require
+ '[lambdaisland.cli :as cli]
+ '[babashka.http-server :as bb-server]
+ '[lambdaisland.shellutils :as su])
+
+(def init {})
+
+(defn serve
+  "Start local dev server"
+  [_]
+  (bb-server/serve {:port 3801 :dir "out"})
+  @(promise))
+
+(defn release
+  "Build / commit / push"
+  [_]
+  (su/spawn "clojure" "-J-Dclojure.main.report=stderr" "-M" "-m" "software.magpie.site")
+  (su/spawn "git" "add" ".")
+  (su/spawn "git" "commit" "-m" "bin/dev release")
+  (su/spawn "git" "push")
+  ;; (su/spawn "cp" "-r" "site/images" "out")
+  ;; (su/spawn "rsync" "-ravz" "out/" "arnebrasseur@arnebrasseur.net:subdomains/www")
+  ;; (su/spawn "rsync" "-ravz" "public/" "arnebrasseur@arnebrasseur.net:subdomains/www")
+  )
+
+(def commands
+  ["serve" #'serve
+   "release" #'release])
+
+(def flags
+  ["-v, --verbose" "Increase verbosity"
+   "-h, --help" "Show help text for a (sub-)command"])
+
+(cli/dispatch*
+ {:name "bin/dev"
+  :init init
+  :flags flags
+  :commands commands})
+
+;; Local Variables:
+;; mode:clojure
+;; End:
