@@ -98,7 +98,7 @@
      "Magpie Solutions"]
     [:meta {:charset "UTF-8"}]
     [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
-    [:link {:rel "stylesheet" :href "/styles.css"}]
+    [:link {:rel "stylesheet" :href (str "/styles.css?" (System/currentTimeMillis))}]
     [:link {:rel "stylesheet" :href "/fonts/outfit.css"}]]
    [:body
     [:main
