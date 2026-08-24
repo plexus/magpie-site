@@ -16,7 +16,9 @@
 (defn release
   "Build / commit / push"
   [_]
+  (su/spawn "rm" "-rf" "docs/*")
   (su/spawn "clojure" "-J-Dclojure.main.report=stderr" "-M" "-m" "software.magpie.site")
+  (su/spawn "cp" "-r" "assets" "docs")
   (su/spawn "git" "add" ".")
   (su/spawn "git" "commit" "-m" "bin/dev release")
   (su/spawn "git" "push")

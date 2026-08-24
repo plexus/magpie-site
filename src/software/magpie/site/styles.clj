@@ -4,16 +4,12 @@
    [clojure.string :as str]
    [lambdaisland.ornament :as o]))
 
-(o/defprop --mirage      "#0c182e")
-(o/defprop --arapawa     "#01095e")
-(o/defprop --navy        "#020e9a")
-(o/defprop --lavender    "#E6E8FF")
-(o/defprop --laser-lemon "#f3f976")
-(o/defprop --sandstorm   "#f5f7c8")
-(o/defprop --butter      "#ffffe8")
-
-(o/defprop --primary --arapawa)
-(o/defprop --secondary --sandstorm)
+(o/defprop --white  "#fcfbff")
+(o/defprop --green  "#05c8ae")
+(o/defprop --blue1  "#217ac1")
+(o/defprop --blue2  "#0a61ab")
+(o/defprop --purple "#353755")
+(o/defprop --black  "#041a1b")
 
 (o/defprop --base-line-height 1.5)
 (o/defprop --heading-line-height 1.15)
@@ -110,32 +106,16 @@
   [:body
    {:font-family "system, sans-serif"}]
   [#{:h1 :h2 :h3 :h4 :h5}
-   {:font-family "'Ostrich Sans', sans-serif"
+   {:font-family "'Outfit', sans-serif"
     :font-weight "400"}]
-  ["main::after" {:display "block"
-                  :text-align "center"
-                  :font-size --text-fluid-3
-                  :content (pr-str "❦")
-                  :margin-top --space-2
-                  :margin-bottom --space-2}])
+  )
 
 (o/defrules colour
   [:body
-   {:background-color --sandstorm
-    :color            --arapawa}]
-  [:a {:color --navy}]
-  [#{:a:focus :a:active} {:background-color --lavender}]
-  [:footer
-   {:background-color --arapawa
-    :color            --sandstorm}
-   [#{:a "a:visited" "a:active"} {:color --laser-lemon}]]
-  [:pre
-   {:color            "#222"
-    :background-color "#eee"
-    }]
-  [:blockquote
-   {:border-left      "3px solid var(--arapawa)"
-    :background-color --butter}]
+   {:background-color --white
+    :color            --black}]
+  [:a {:color --blue2}]
+  ;; [#{:a:focus :a:active} {:background-color --lavender}]
   )
 
 (o/defrules styles
