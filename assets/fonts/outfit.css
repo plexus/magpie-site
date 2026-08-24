@@ -3,7 +3,7 @@
   font-family: 'Outfit';
   font-style: normal;
   font-weight: 400;
-  src: url('fonts/outfit-v15-latin-regular.woff2') format('woff2');
+  src: url('outfit-v15-latin-regular.woff2') format('woff2');
 }
 
 @font-face {
@@ -11,7 +11,7 @@
   font-family: 'Outfit';
   font-style: normal;
   font-weight: 600;
-  src: url('fonts/outfit-v15-latin-600.woff2') format('woff2');
+  src: url('outfit-v15-latin-600.woff2') format('woff2');
 }
 
 @font-face {

@@ -160,7 +160,7 @@
 
 (defn handler [opts]
   (let [dirs (map #(#'bb-server/file-router % nil)
-                  ["./public"])]
+                  ["./public" "./assets"])]
     (fn [{:keys [uri request-method] :as req}]
       (println " " (str/upper-case (name request-method)) uri)
       (let [paths (paths)
