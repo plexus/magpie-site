@@ -42,7 +42,7 @@
                                                        (apply str "0" (repeat (- i) "0"))
                                                        i)))
               ~(utopia-clamp min-base max-base ratio i min-vw max-vw)))
-       ~@(for [i (range -3 7)]
+       ~@(for [i (range -3 20)]
            `(o/defprop ~(symbol (str "--space-" (if (neg-int? i)
                                                   (apply str "0" (repeat (- i) "0"))
                                                   i)))
@@ -119,7 +119,6 @@
   )
 
 (o/defrules styles
-  [:a {:text-decoration "underline dotted"}]
   [:a:hover {:text-decoration "underline solid"}]
   [:pre
    {:border-radius    "0.1rem"
@@ -145,4 +144,17 @@
   [:footer
    [:h2 [:a {:text-decoration "none"}]]
    [:p {:font-style "italic"}]
-   ])
+   ]
+
+  [:#magpie-footer1
+   {:width --space-5
+    :position :fixed
+    :bottom 0
+    :left "1rem"}]
+
+  [:#magpie-footer2
+   {:width --space-6
+    :position :fixed
+    :bottom 0
+    :right "1rem"}]
+  )

@@ -179,7 +179,7 @@
                   dirs)))))))
 
 (defn run-server [opts]
-  (let [port (:port opts 3800)]
+  (let [port (:port opts 3801)]
     (println "Starting server on port" port)
     (server/run-server (fn [req] ((handler opts) req)) {:port port})))
 
@@ -190,6 +190,8 @@
 
 (comment
   (run-server {})
+
+  (clojure.java.browse/browse-url "http://localhost:3801")
 
   (let [p (inline-content (slurp-md-with-preamble "/home/arne/repos/arnebrasseur.net/site/coderdojo_pingpong.md"))]
     (hiccup/render     (layout p   (page p))))
