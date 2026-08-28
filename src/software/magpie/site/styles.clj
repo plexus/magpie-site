@@ -37,12 +37,12 @@
         space-max 0.75
         space-ratio 1.5]
     `(do
-       ~@(for [i (range -3 7)]
+       ~@(for [i (range -3 12)]
            `(o/defprop ~(symbol (str "--text-fluid-" (if (neg-int? i)
                                                        (apply str "0" (repeat (- i) "0"))
                                                        i)))
               ~(utopia-clamp min-base max-base ratio i min-vw max-vw)))
-       ~@(for [i (range -3 20)]
+       ~@(for [i (range -3 12)]
            `(o/defprop ~(symbol (str "--space-" (if (neg-int? i)
                                                   (apply str "0" (repeat (- i) "0"))
                                                   i)))
@@ -107,45 +107,15 @@
    {:font-family "system, sans-serif"}]
   [#{:h1 :h2 :h3 :h4 :h5}
    {:font-family "'Outfit', sans-serif"
-    :font-weight "400"}]
-  )
+    :font-weight "400"}])
 
 (o/defrules colour
   [:body
    {:background-color --white
     :color            --black}]
-  [:a {:color --blue2}]
-  ;; [#{:a:focus :a:active} {:background-color --lavender}]
-  )
+  [:a {:color --blue2}])
 
 (o/defrules styles
-  [:a:hover {:text-decoration "underline solid"}]
-  [:pre
-   {:border-radius    "0.1rem"
-    :box-shadow       "rgba(0, 0, 0, 0.16) 0px 1px 4px"
-    :overflow         "auto"}]
-
-  [:blockquote
-   {:border-radius    "0.2rem"
-    :box-shadow       "rgba(0, 0, 0, 0.16) 0px 1px 4px"}]
-
-  [:.invisible-whitespace
-   {:display "inline-block"
-    :width   0}]
-
-  [:.visible-whitespace
-   {:opacity "0.2"
-    ;;:user-select "none"
-    }]
-
-  [".visible-whitespace::before"
-   {:content "attr(data-content)"}]
-
-  [:footer
-   [:h2 [:a {:text-decoration "none"}]]
-   [:p {:font-style "italic"}]
-   ]
-
   [:#magpie-footer1
    {:width --space-5
     :position :fixed
@@ -156,5 +126,4 @@
    {:width --space-6
     :position :fixed
     :bottom 0
-    :right "1rem"}]
-  )
+    :right "1rem"}])

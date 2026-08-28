@@ -1,12 +1,12 @@
 :where(html) {
   --blue1: #217ac1;
   --heading-line-height: 1.15;
-  --space-12: clamp(64.873169rem, 55.605573rem + 46.337978vw, 97.309753rem);
   --green: #05c8ae;
   --space-10: clamp(28.83252rem, 24.713588rem + 20.594657vw, 43.248779rem);
   --base-line-height: 1.5;
   --purple: #353755;
   --text-fluid-000: clamp(0.64rem, 0.594286rem + 0.228571vw, 0.8rem);
+  --text-fluid-9: clamp(7.450581rem, 6.918396rem + 2.660922vw, 9.313226rem);
   --text-fluid-0: clamp(1.rem, 0.928571rem + 0.357143vw, 1.25rem);
   --space-3: clamp(1.6875rem, 1.446429rem + 1.205357vw, 2.53125rem);
   --space-2: clamp(1.125rem, 0.964286rem + 0.803571vw, 1.6875rem);
@@ -15,30 +15,27 @@
   --text-fluid-4: clamp(2.441406rem, 2.26702rem + 0.871931vw, 3.051758rem);
   --space-5: clamp(3.796875rem, 3.254464rem + 2.712054vw, 5.695313rem);
   --space-9: clamp(19.22168rem, 16.475725rem + 13.729771vw, 28.83252rem);
-  --space-13: clamp(97.309753rem, 83.40836rem + 69.506967vw, 145.96463rem);
-  --space-16: clamp(328.420418rem, 281.503215rem + 234.586013vw, 492.630627rem);
+  --text-fluid-7: clamp(4.768372rem, 4.427774rem + 1.702990vw, 5.960464rem);
   --text-fluid-6: clamp(3.814697rem, 3.542219rem + 1.362392vw, 4.768372rem);
   --text-fluid-2: clamp(1.5625rem, 1.450893rem + 0.558036vw, 1.953125rem);
-  --space-17: clamp(492.630627rem, 422.254823rem + 351.879019vw, 738.94594rem);
   --space-0: clamp(0.5rem, 0.428571rem + 0.357143vw, 0.75rem);
-  --space-15: clamp(218.946945rem, 187.66881rem + 156.390675vw, 328.420418rem);
   --space-4: clamp(2.53125rem, 2.169643rem + 1.808036vw, 3.796875rem);
   --space-6: clamp(5.695313rem, 4.881696rem + 4.068080vw, 8.542969rem);
   --blue2: #0a61ab;
   --space-0000: clamp(0.148148rem, 0.126984rem + 0.105820vw, 0.222222rem);
   --space-7: clamp(8.542969rem, 7.322545rem + 6.102121vw, 12.814453rem);
-  --space-19: clamp(1108.41891rem, 950.073351rem + 791.727793vw, 1662.628365rem);
   --space-1: clamp(0.75rem, 0.642857rem + 0.535714vw, 1.125rem);
+  --text-fluid-10: clamp(9.313226rem, 8.647995rem + 3.326152vw, 11.641532rem);
   --text-fluid-1: clamp(1.25rem, 1.160714rem + 0.446429vw, 1.5625rem);
   --text-fluid-5: clamp(3.051758rem, 2.833775rem + 1.089914vw, 3.814697rem);
   --space-8: clamp(12.814453rem, 10.983817rem + 9.153181vw, 19.22168rem);
-  --space-18: clamp(738.94594rem, 633.382234rem + 527.818529vw, 1108.41891rem);
+  --text-fluid-11: clamp(11.641532rem, 10.809994rem + 4.157690vw, 14.551915rem);
   --space-11: clamp(43.248779rem, 37.070382rem + 30.891985vw, 64.873169rem);
   --black: #041a1b;
   --text-fluid-0000: clamp(0.512rem, 0.475429rem + 0.182857vw, 0.64rem);
   --text-fluid-3: clamp(1.953125rem, 1.813616rem + 0.697545vw, 2.441406rem);
   --white: #fcfbff;
-  --space-14: clamp(145.96463rem, 125.11254rem + 104.260450vw, 218.946945rem);
+  --text-fluid-8: clamp(5.960464rem, 5.534717rem + 2.128737vw, 7.450581rem);
   --space-00: clamp(0.333333rem, 0.285714rem + 0.238095vw, 0.5rem);
 }
 
@@ -181,42 +178,6 @@ body {
 
 a {
   color: var(--blue2);
-}
-
-a:hover {
-  text-decoration: underline solid;
-}
-
-pre {
-  border-radius: 0.1rem;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  overflow: auto;
-}
-
-blockquote {
-  border-radius: 0.2rem;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-}
-
-.invisible-whitespace {
-  display: inline-block;
-  width: 0;
-}
-
-.visible-whitespace {
-  opacity: 0.2;
-}
-
-.visible-whitespace::before {
-  content: attr(data-content);
-}
-
-footer h2 a {
-  text-decoration: none;
-}
-
-footer p {
-  font-style: italic;
 }
 
 #magpie-footer1 {
